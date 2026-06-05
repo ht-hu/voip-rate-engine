@@ -45,14 +45,18 @@ describe("calculateRate", () => {
   });
 
   it("does not apply discount for NORMAL users", () => {
-    const result = calculateRate(createContext({ callee: "+8613800000000", customerType: "NORMAL" }));
+    const result = calculateRate(
+      createContext({ callee: "+8613800000000", customerType: "NORMAL" }),
+    );
 
     expect(result.ratePerMinute).toBe(0.1);
     expect(result.amount).toBe(0.1);
   });
 
   it("applies night discount", () => {
-    const result = calculateRate(createContext({ callee: "+8613800000000", startedAt: nightTime() }));
+    const result = calculateRate(
+      createContext({ callee: "+8613800000000", startedAt: nightTime() }),
+    );
 
     expect(result.ratePerMinute).toBe(0.08);
     expect(result.amount).toBe(0.08);
