@@ -25,6 +25,20 @@ pnpm install
 pnpm test
 ```
 
+## 代码规范
+
+本项目使用 ESLint 和 Prettier 保持代码风格一致。
+
+```bash
+pnpm lint
+pnpm lint:fix
+pnpm format
+```
+
+- `pnpm lint`: 检查 TypeScript 代码规范。
+- `pnpm lint:fix`: 自动修复可修复的 ESLint 问题。
+- `pnpm format`: 使用 Prettier 格式化项目文件。
+
 ## 项目结构说明
 
 ```text
